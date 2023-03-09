@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Yelp Review NLP</title>
+</head>
+<body>
+  <h1>Hello, World</h1>
+  <a href='/business'>Business</a>
+  <a href='/sentiment'>Sentiment</a>
+  <br>
+  <br>
+  
+  <form action='/predict' method='post'>
+    <textarea name='review' id='review' cols='50' rows='10', placeholder='Review:'>
+    
+    </textarea>
+    <button type='submit'> Predict Stars of Review </button>
+  </form>
+  <br>
+  <br>
+  {{ prediction_text }}
+</body>
+</html>

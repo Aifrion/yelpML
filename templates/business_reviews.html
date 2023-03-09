@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Reviews</title>
+</head>
+<body>
+  <h1>Attributes </h1>
+  <a href='/business'>Find Businesses</a>
+  <H2>Average rating: {{ avg_review }}</H2>
+  {% if sentiment == 'POS' %}
+    <h3>KEEP IT UP</h3>
+    {% else %}
+    <h3>KEEP LOOKOUT FOR THESE:</h3>
+  {% endif %}
+  <table>
+    {% for word in top_30 %}
+      <tr>{{ word }}</tr>
+    {% endfor %}
+  </table>
+
+</body>
+</html>

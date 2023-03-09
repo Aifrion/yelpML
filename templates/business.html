@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+</head>
+<body>
+  <h1>Business Page</h1>
+  <a href='/'>home</a>
+
+  <br>
+  <form action='/business_search' method = 'post'>
+    <textarea name='business' id='business' cols='50' rows='10', placeholder='business:'>
+
+    </textarea>
+    <button type='submit'>Search Business</button>
+  </form>
+
+  <br>
+  <br>
+  <table style='border: 1px solid black'>
+    <tr style='border: 1px solid black'>
+      {% for col in column_names %}
+        <th style='border: 1px solid black'>{{ col }}</th>
+      {% endfor %}
+    </tr>
+    {% for row in row_data %}
+      <tr style='border: 1px solid black'>
+        {% for col, row_info in zip(column_names, row) %}
+          {% if col == link_column %}
+            <td style='border: 1px solid black'>
+              <form action='/business_reviews' method='post'>
+                <button type='submit' name='business_id' value={{ row_info }}>
+                {{ row_info }}
+              </button>
+              </form>
+
+            </td>
+            {% else %}
+            <td style='border: 1px solid black'>
+            {{ row_info }}
+            </td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sentiment</title>
+</head>
+<body>
+  <h1>SENTIMENT</h1>
+  <a href='/'>home</a>
+  <br>
+  <br>
+
+  <form action='/predictSent' method='post'>
+    <textarea name='review' id='review' cols='50' rows='10', placeholder='Review:'>
+
+    </textarea>
+    <button type='submit'> Predict Sentiment of Review </button>
+  </form>
+
+  <br>
+  <br>
+
+  {{ sentiment_text }}
+</body>
+</html>
